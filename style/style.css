@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  line-height: 1.6;
+  word-spacing: 2px;
+  letter-spacing: 1.5px;
+  font-family: sans-serif;
+}
+
+#container {
+  background: url(./images/bg.jpg);
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#container header {
+  text-align: center;
+}
+
+#container header h1 {
+  padding-top: 1rem;
+  font-size: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+#container #content {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+#container #content p {
+  text-align: center;
+  font-size: 1rem;
+  margin: 2rem 0;
+  color: #fff;
+}
+
+#container #content #buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container #content #buttons .buttons {
+  padding: 0.2rem 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#container #content #buttons .buttons:hover {
+  background: #c71e1e;
+  color: #fff;
+}
+
+@media (min-width: 740px) {
+  #container #content #buttons .buttons {
+    padding: 0.5rem 1rem;
+  }
+}
+
+#fact-container {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(75%, #11214e), to(#c71e1e));
+  background: linear-gradient(bottom left, #11214e 75%, #c71e1e);
+  -webkit-animation: note 2s ease;
+          animation: note 2s ease;
+}
+
+@-webkit-keyframes note {
+  0% {
+    top: -15%;
+  }
+  100% {
+    top: 55%;
+  }
+}
+
+@keyframes note {
+  0% {
+    top: -15%;
+  }
+  100% {
+    top: 55%;
+  }
+}
+
+@media (min-width: 740px) {
+  #fact-container {
+    width: 50%;
+  }
+}
+
+#fact-container #random-fact {
+  padding: 1rem;
+}
+
+#fact-container #random-fact label {
+  color: #fff;
+}
+
+#fact-container #random-fact #input {
+  width: 90%;
+  border: none;
+  outline: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
+}
+
+#fact-container #random-fact h3 {
+  color: #fff;
+  padding: 0.5rem 0;
+}
+
+#fact-container #random-fact #facts {
+  color: #fff;
+}
+
+#fact-container #random-fact #facts p {
+  word-break: break-all;
+}
+
+#fact-container #random-fact #back-btn {
+  position: relative;
+  top: 3px;
+  left: 95%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+#fact-container #random-fact #back-btn #line1 {
+  width: 3px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#fact-container #random-fact #back-btn #line2 {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,170 @@
+$colors: (
+	main-color: linear-gradient(bottom left, rgb(17, 33, 78) 75%, rgb(199, 30, 30) ),
+	primary-color:  #fff
+);
+
+@function color ($colorName) {
+	@return map-get($map: $colors, $key: $colorName )
+};
+
+$desktop: 740px;
+
+@mixin desktop {
+	@media (min-width: #{$desktop}) {
+		@content
+	}
+};
+
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	line-height: 1.6;
+	word-spacing: 2px;
+	letter-spacing: 1.5px;
+	font-family: sans-serif;
+}
+
+#container {
+	background: url(./images/bg.jpg) ;
+	background-position: center;
+	background-size: 100% 100%;
+	height: 100vh;
+	box-sizing: border-box;
+
+	header {
+		text-align: center;
+		
+		h1 {
+			padding-top: 1rem;
+			font-size: 3rem;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: color(primary-color);
+		}
+	}
+
+	#content {
+		position: absolute;
+		bottom: 30%;
+		left: 50%;
+		transform: translate(-50%);
+		p {
+			text-align: center;
+			font-size: 1rem;
+			margin: 2rem 0;
+			color: color(primary-color);
+		}
+
+
+		#buttons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.buttons {
+				padding: 0.2rem 1.5rem;
+				background: color(primary-color);
+				border-radius: 10px;
+				border: none;
+				outline: none;
+				margin: 0.5rem 1rem;
+				cursor: pointer;
+
+				&:hover {
+					background: rgb(199, 30, 30);;
+					color: color(primary-color);
+				}
+
+				@include desktop() {
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+	
+	}
+}
+
+
+#fact-container {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 80%;
+	background: color(main-color);
+	animation: note 2s ease;
+    @keyframes note {
+        0%{top:-15%;}
+        100%{top:55%;}
+    }
+	@include desktop() {
+		width: 50%;
+	}
+
+	#random-fact {
+		padding: 1rem;
+
+		label {
+			color: color(primary-color);
+		}
+
+		#input {
+			width: 90%;
+			border: none;
+			outline: none;
+			margin: 0.5rem 0;
+			padding: 0.5rem 0.5rem;
+			
+		}
+
+		h3 {
+			color: color(primary-color);
+			padding: 0.5rem 0;
+		}
+
+		#facts {
+			color: color(primary-color);
+			p {
+				word-break: break-all;
+			}
+		}
+
+		#back-btn {
+			position: relative;
+			top: 3px;
+			left: 95%;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+			transform: rotate(40deg);
+
+			#line1 {
+			width: 3px;
+			height: 20px;
+			background: color(primary-color);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			overflow: hidden;
+			border-radius: 10px;
+    }
+
+			#line2 {
+				width: 20px;
+				height: 3px;
+				background: color(primary-color);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				overflow: hidden;
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
